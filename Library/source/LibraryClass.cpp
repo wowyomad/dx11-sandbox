@@ -7,8 +7,3 @@ void Library::LibraryClass::Print()
 {
 	std::cout << "Hello from Library" << std::endl;
 }
-
-void Library::LibraryClass::__TestMethod()
-{
-	
-}
