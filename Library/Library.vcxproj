@@ -89,6 +89,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)include;$(SolutionDir)external\DirectXTK\Inc;$(SolutionDir)external\Effects\Inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -111,6 +112,7 @@ copy /Y "$(TargetDir)$(ProjectName).lib" "$(SolutionDir)lib"</Command>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)include;$(SolutionDir)external\DirectXTK\Inc;$(SolutionDir)external\Effects\Inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -118,7 +120,7 @@ copy /Y "$(TargetDir)$(ProjectName).lib" "$(SolutionDir)lib"</Command>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)external\DirectXTK\Bin\Desktop_2022_Win10\$(Platform)\$(Configuration)\;$(SolutionDir)external\Effects\Bin\Desktop_2022_Win10\$(Platform)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>DirectXTK.lib;Effects11d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>DirectXTK.lib;Effects11.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>mkdir "$(SolutionDir)lib" 
@@ -132,7 +134,7 @@ copy /Y "$(TargetDir)$(ProjectName).lib" "$(SolutionDir)lib"</Command>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalIncludeDirectories>$(ProjectDir)include;$(SolutionDir)external\DirectXTK\Inc;$(SolutionDir)external\Effects\Inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -156,6 +158,7 @@ copy /Y "$(TargetDir)$(ProjectName).lib" "$(SolutionDir)lib"</Command>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)include;$(SolutionDir)external\DirectXTK\Inc;$(SolutionDir)external\Effects\Inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -163,7 +166,7 @@ copy /Y "$(TargetDir)$(ProjectName).lib" "$(SolutionDir)lib"</Command>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)external\DirectXTK\Bin\Desktop_2022_Win10\$(Platform)\$(Configuration)\;$(SolutionDir)external\Effects\Bin\Desktop_2022_Win10\$(Platform)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>DirectXTK.lib;Effects11d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>DirectXTK.lib;Effects11.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>mkdir "$(SolutionDir)lib" 
@@ -172,10 +175,18 @@ copy /Y "$(TargetDir)$(ProjectName).lib" "$(SolutionDir)lib"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="source\LibraryClass.cpp" />
+    <ClCompile Include="include\StaticTimer.h" />
+    <ClCompile Include="include\GameTime.h" />
+    <ClCompile Include="source\Window.cpp" />
+    <ClCompile Include="source\GameClock.cpp" />
+    <ClCompile Include="source\GameTime.cpp" />
+    <ClCompile Include="source\StaticTimer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\LibraryClass.h" />
+    <ClInclude Include="include\CleanWindows.h" />
+    <ClInclude Include="include\debug.h" />
+    <ClInclude Include="include\GameClock.h" />
+    <ClInclude Include="include\Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
